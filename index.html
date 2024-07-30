@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Савенок А.М. ИЭзс-62-21</title>
+</head>
+
+<body>
+  <div class="container">
+    <section class="menu">
+      <ul class="menu_list">
+        <li class="active"><a href="#task">Задача</a></li>
+        <li><a href="#test">Тест</a></li>
+        <li><a href="#results">Результат</a></li>
+      </ul>
+    </section>
+    <div class="program">
+      <section class="task" id="task">
+        <div class="task_wrap">
+          <p class="task_my"><b>Вариант №12</b> Ученики <b>трех школ </b>города принимают участие в <b>тестировании</b>
+            по математике.
+            <b>Правильные</b> численные <b>ответы</b> к пяти предложенным задачам <b>даны</b>. О каждом ученике
+            <b>известно: фамилия, номер школы и
+              пять ответов</b> на задачи. <b>Составить списки</b> учеников <b>по школам</b>, расположив в каждом списке
+            <b>фамилии</b> в порядке <b>убывания</b>
+            количества <b>решенных задач</b>. <b>Предусмотреть</b> возможный <b>ответ «не решил»</b>. Выполнить
+            <b>сортировку</b> списка.
+            <span><img class="task_my_img" src="images/None_fd60c0.png" alt=""></span>
+          </p>
+          <div class="task_total">
+            <p class="task_total_title">Завершили тест:</p>
+            <p class="task_total_text">0</p>
+            <p class="task_total_span">участников <br>из</p>
+            <p class="task_total_need">100</p>
+          </div>
+        </div>
+      </section>
+      <section class="test disp_none" id="test">
+        <h1>Тест</h1>
+        <form action="" class="form_test">
+          <fieldset>
+            <legend>Данные ученика</legend>
+            <div class="test_input_required">
+              <input class="test_family" type="text" data-input placeholder="Фамилия" minlength="2" maxlength="25"
+                required>
+              <span class="test_family_error disp_none"><span class="test_family_error_text"></span><img
+                  src="images/close.png" title="Закрыть подсказку"></span>
+              <select class="test_school_num" data-input required>
+                <option disabled selected hidden>Номер школы</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Задачи</legend>
+            <p><strong>Задание 1.</strong><br>
+              Выберите правильный ответ: 3x + 2x = 8, x = ?
+            <div data-input>
+              <p>
+                <input type="radio" name="test_zadanie1" value="1.3">
+                1.3
+              </p>
+              <p>
+                <input type="radio" name="test_zadanie1" value="1.6">
+                1.6
+              </p>
+              <p>
+                <input type="radio" name="test_zadanie1" value="2">
+                2
+              </p>
+              <p>
+                <input type="radio" name="test_zadanie1" value="2.3">
+                2.3
+              </p>
+            </div>
+            </p>
+            <p> <strong>Задание 2.</strong> <br>
+              Выберите правильный ответ (один или несколько): x<sup>2</sup> - 3x = -2, x = ?
+            <div data-input>
+              <p>
+                <input type="checkbox" name="test_zadanie2" value="-2">
+                -2
+              </p>
+              <p>
+                <input type="checkbox" name="test_zadanie2" value="-1">
+                -1
+              </p>
+              <p>
+                <input type="checkbox" name="test_zadanie2" value="1">
+                1
+              </p>
+              <p>
+                <input type="checkbox" name="test_zadanie2" value="2">
+                2
+              </p>
+            </div>
+            </p>
+            <p> <strong>Задание 3.</strong><br>
+              Решите задачу: Теплоход плыл 4 часа со скоростью
+              45 км/ч. Какое расстояние он проплыл?
+            <div>
+              <p><strong>Ответ:</strong><input type="text" data-input class="test_zadanie3" maxlength="10"><span
+                  class="test_zadanie3_error"></span><span>Пример ответа: 3
+                  или 3.5</span></p>
+            </div>
+            </p>
+            <p> <strong>Задание 4.</strong> <br>
+              Решите задачу: Крейсер проплыл 80 км со скоростью 40 км/ч. Сколько времени он затратил?
+            <div>
+              <p><strong>Ответ:</strong><input type="text" data-input class="test_zadanie4" maxlength="10"><span
+                  class="test_zadanie4_error"></span><span>Пример ответа: 3
+                  или 3.5</span></p>
+            </div>
+            </p>
+            <p><strong>Задание 5.</strong><br>
+              Решите задачу: Из двух городов А и Б, расстояние между которыми 645 км, одновременно вышли 2 поезда
+              навстречу друг другу. Известно, что скорость первого поезда 62 км/ч.
+              Найди расстояние, пройденное вторым поездом, если поезда встретились через 5 часов.
+            <div>
+              <p><strong>Ответ:</strong><input type="text" data-input class="test_zadanie5" maxlength="10"><span
+                  class="test_zadanie5_error"></span><span>Пример ответа: 3
+                  или 3.5</span></p>
+            </div>
+            </p>
+          </fieldset>
+          <div class="count_answers_container"> <button type="button" class="btn add_answers_test">Ответить</button>
+            <div class="count_answers_window disp_none"><img src="images/close_red.png" alt="close"> Верных
+              ответов:<span>5</span></div>
+          </div>
+        </form>
+      </section>
+      <section class="results disp_none">
+        <div class="data disp_none" style="padding: 35px;">
+          <p class="data_close"><span class="data_move">Переместить</span><img class="data_minimize_img"
+              src="images/minus-symbol.png" alt="Свернуть"><img class="data_close_img" src="images/close_orange.png"
+              alt="Закрыть"></p>
+          <form action="" class="form_data">
+            <div class="form_data_delete_data">
+              <div>
+                <button class="btn_mini remove_tables" type="button" title="Очистить данные таблиц"><img
+                    class="btn_mini_img" src="images/delete.png" alt="DELETE"></button>
+                <button class="btn_mini remove_student" type="button" title="Удалить по нажатию"><img
+                    class="btn_mini_img" src="images/exclamation.png" alt="DELETE"></button>
+                <button class="btn_mini change_students_btn" type="button" title="Изменить количество участвующих">
+                  <img class="btn_mini_img" src="images/education.png" alt="add/remove"></button>
+                <div class="change_students_block hide"> <input class="change_students_input" maxlength="3" type="text">
+                  <button class="btn_mini change_students_save" type="button" title="Сохранить изменения"><img
+                      class="btn_mini_img" src="images/download.png" alt="Внести изменения"></button>
+                </div>
+              </div>
+              <div class="remove_table">
+                <button class="btn_mini" type="button" title="Очистить таблицу 1"><img class="btn_mini_img"
+                    src="images/delete_paint1.png" alt="DELETE"></button>
+                <button class="btn_mini" type="button" title="Очистить таблицу 2"><img class="btn_mini_img"
+                    src="images/delete_paint2.png" alt="DELETE"></button>
+                <button class="btn_mini" type="button" title="Очистить таблицу 3"><img class="btn_mini_img"
+                    src="images/delete_paint3.png" alt="DELETE"></button>
+              </div>
+            </div>
+            <p class="change_students_error"></p>
+            <fieldset>
+              <legend>Добавить ученика</legend>
+              <div class="data_input_required">
+                <input type="text" placeholder="Фамилия" class="data_family" data-input minlength="2" maxlength="25"
+                  required>
+                <span class="data_family_error disp_none"><span class="data_family_error_text"></span><img
+                    src="images/close.png" title="Закрыть подсказку"></span>
+                <select class="data_school_num" data-input required>
+                  <option disabled selected hidden>Номер школы</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </div>
+              <div class="data_zadanie">
+                <p>Задание 1<input type="text" class="data_zadanie1" data-input maxlength="10"><span
+                    class="data_zadanie1_error">ответ: 1.6</span>
+                </p>
+                <p>Задание 2<input type="text" class="data_zadanie2 select_type" data-input maxlength="10"><span
+                    class="data_zadanie2_error">ответ: 1, 2</span></p>
+                <p>Задание 3<input type="text" class="data_zadanie3" data-input maxlength="10"><span
+                    class="data_zadanie3_error">ответ:
+                    11.25</span></p>
+                <p>Задание 4<input type="text" class="data_zadanie4" data-input maxlength="10"><span
+                    class="data_zadanie4_error">ответ: 2</span>
+                </p>
+                <p>Задание 5<input type="text" class="data_zadanie5" data-input maxlength="10"><span
+                    class="data_zadanie5_error">ответ: 335</span>
+                </p>
+              </div>
+            </fieldset>
+            <div class="form_data_buttons">
+              <button type="button" class="btn get_random_student"> Получить случайные значения</button>
+              <button type="button" class="btn add_student"> Добавить</button>
+              <div class="add_student_true disp_none"><img src="images/close_red.png" alt="close"><span>Достигнуто
+                  максимальное допустимое количество участников</span></div>
+            </div>
+          </form>
+        </div>
+        <div class="admin">
+          <p class="admin_text">войти</p>
+          <form class="admin_form">
+            <input class="admin_login" type="text" placeholder="Логин (admin)" minlength="4" maxlength="10">
+            <input class="admin_password" type="password" placeholder="Пароль (1234)" autocomplete="off" minlength="4"
+              maxlength="10">
+            <input class="admin_form_btn" type="button" value="Войти">
+          </form>
+        </div>
+        <div class="admin_panel disp_none">
+          <img src="images/expand-arrows.png" alt="open_form" title="Открыть форму">
+          <img src="images/maximize.png" alt="move_form" title="Переместить форму в центр">
+          <img src="images/close_red.png" alt="close_form" title="Выйти">
+        </div>
+        <div class="result">
+          <h2 class="result_title">Результат</h2>
+          <div class="schools">
+            <p>Школа №1</p><span><img src="images/down-arrow.png"></span>
+            <table>
+              <thead>
+                <tr>
+                  <th>Фамилия</th>
+                  <th>№1</th>
+                  <th>№2</th>
+                  <th>№3</th>
+                  <th>№4</th>
+                  <th>№5</th>
+                  <th>Верно</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <div class="schools">
+            <p>Школа №2</p><span><img src="images/down-arrow.png"></span>
+            <table>
+              <thead>
+                <tr>
+                  <th>Фамилия</th>
+                  <th>№1</th>
+                  <th>№2</th>
+                  <th>№3</th>
+                  <th>№4</th>
+                  <th>№5</th>
+                  <th>Верно</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <div class="schools">
+            <p>Школа №3</p><span><img src="images/down-arrow.png"></span>
+            <table>
+              <thead>
+                <tr>
+                  <th>Фамилия</th>
+                  <th>№1</th>
+                  <th>№2</th>
+                  <th>№3</th>
+                  <th>№4</th>
+                  <th>№5</th>
+                  <th>Верно</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <button type="button" class="btn get_cvs">Сформировать отчет .cvs</button>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="random.js"></script><!-- тут массив студентов -->
+  <script src="main.js"></script>
+</body>
+
+</html>

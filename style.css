@@ -1,0 +1,971 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+body {
+  letter-spacing: 1.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 140px 10px 30px 10px;
+}
+
+sup,
+sub {
+  font-size: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 2px solid #eb680b;
+  padding: 15px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+input[type=radio],
+input[type="checkbox"] {
+  outline: none;
+  margin-right: 10px;
+}
+
+input[type=text],
+input[type=password] {
+  padding: 5px;
+  letter-spacing: .1rem;
+}
+
+/*меню*/
+.menu {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1920px;
+  background-color: #fff;
+  padding: 25px 0;
+  border-bottom: 4px solid black;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+}
+
+.menu_list {
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu_list li {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.menu_list .active {
+  font-weight: bold;
+}
+
+.program section {
+  min-height: 100vh;
+}
+
+/*секция задачи*/
+.task {
+  background-color: rgba(255, 153, 0, .9);
+  background: -webkit-linear-gradient(180deg, rgba(255, 153, 0, .5) 37%, rgba(255, 102, 0, .9)), url(images/bj.png);
+  background: -moz-linear-gradient(180deg, rgba(255, 153, 0, .5) 37%, rgba(255, 102, 0, .9)), url(images/bj.png);
+  background: linear-gradient(180deg, rgba(255, 153, 0, .5) 37%, rgba(255, 102, 0, .9)), url(images/bj.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.task_wrap {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.task_total {
+  background-image: url(images/count_total.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 410px;
+  height: 530px;
+  position: relative;
+  margin-right: auto;
+}
+
+.task_total_title {
+  text-align: right;
+  font-size: 92px;
+  font-weight: bold;
+  letter-spacing: .3rem;
+  position: absolute;
+  top: -15%;
+  right: 82%;
+  color: #dd2005;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.task_total_text {
+  text-align: center;
+  font-weight: 900;
+  font-size: 100px;
+  margin-top: 21%;
+}
+
+.task_total_need {
+  text-align: center;
+  font-weight: 900;
+  font-size: 100px;
+}
+
+.task_total_span {
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.task_my {
+  line-height: 2rem;
+  text-align: justify;
+  width: 600px;
+  height: max-content;
+  margin: auto auto 20px auto;
+  font-size: 18px;
+  border: 4px solid black;
+  border-radius: 25px;
+  padding: 25px;
+  position: relative;
+}
+
+.task_my_img {
+  top: 0;
+  transform: translate(-25px, -25px);
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  border: 1px solid black;
+  box-shadow: 0px 0px 20px yellow;
+}
+
+.btn {
+  width: 230px;
+  height: 30px;
+  color: #fff;
+  border: 1px solid #f9870c;
+  outline: 2px solid #f9870c;
+  outline-offset: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: .4s;
+  background-color: #f9870c;
+}
+
+.btn:hover {
+  border: 1px solid #f9870c;
+  background-color: transparent;
+  color: #f9870c;
+}
+
+.disp_none {
+  display: none;
+}
+
+.disp_block {
+  display: block;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.test {
+  max-width: 930px;
+  margin: 0 auto;
+  line-height: 1.8rem;
+}
+
+.add_answers_test {
+  display: block;
+  margin: 30px auto;
+}
+
+.count_answers_container {
+  position: relative;
+}
+
+.count_answers_window {
+  position: absolute;
+  width: 250px;
+  height: 220px;
+  top: -240px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  line-height: 1em;
+  font-weight: bold;
+  font-size: 50px;
+  color: #dd2005;
+  text-shadow: 1px 1px 2px black;
+}
+
+.count_answers_window span {
+  display: block;
+  text-align: center;
+  font-size: 100px;
+  margin-top: 30px;
+}
+
+.count_answers_window img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.add_student_true {
+  position: absolute;
+  width: 400px;
+  height: max-content;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  line-height: 1em;
+  font-weight: bold;
+  font-size: 50px;
+  color: #dd2005;
+  text-shadow: 1px 1px 2px black;
+}
+
+.add_student_true img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.add_student_true span {
+  display: block;
+  text-align: center;
+}
+
+.form_test fieldset+fieldset>p:nth-last-of-type(n) {
+  margin-bottom: 20px;
+  background-color: rgba(249, 135, 12, .2);
+}
+
+.form_test fieldset+fieldset>p {
+  margin-bottom: 20px;
+}
+
+.form_test fieldset {
+  margin-top: 30px;
+}
+
+.form_test fieldset+fieldset {
+  margin-top: 20px;
+}
+
+.test_family {
+  width: 200px;
+  margin: 0 40px 0 0;
+  box-sizing: border-box;
+}
+
+.test_family_error,
+.data_family_error {
+  width: 200px;
+  margin: 0 40px 0 0;
+  color: red;
+  position: relative;
+}
+
+.test_family_error img,
+.data_family_error img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: -30px;
+  top: -5px;
+  cursor: pointer;
+}
+
+.test_input_required,
+.data_input_required {
+  height: 50px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
+
+legend {
+  padding: 0 20px;
+}
+
+.test_zadanie3,
+.test_zadanie4,
+.test_zadanie5 {
+  margin-right: 30px;
+}
+
+.test_zadanie3+span+span,
+.test_zadanie4+span+span,
+.test_zadanie5+span+span {
+  font-size: 13px;
+  font-style: italic;
+  color: #060400;
+}
+
+.test_zadanie3+span,
+.test_zadanie4+span,
+.test_zadanie5+span {
+  color: red;
+  margin-right: 30px;
+}
+
+
+.test_zadanie3,
+.test_zadanie4,
+.test_zadanie5 {
+  margin-left: 20px;
+}
+
+select {
+  margin-left: 30px;
+  padding: 3px;
+  text-align: center;
+}
+
+.form_test p {
+  text-align: justify;
+}
+
+/*результат таблицы*/
+table {
+  border-collapse: collapse;
+  border: 1px solid #f9870c;
+  margin-top: 25px;
+  width: 100%;
+}
+
+table th {
+  border: 1px solid black;
+}
+
+table tr,
+td {
+  border: 1px solid #f9870c;
+}
+
+table tr,
+th,
+td {
+  padding: 5px;
+  text-align: center;
+}
+
+table tr td:first-child {
+  text-align: left;
+}
+
+table th {
+  background-color: #f9870c;
+}
+
+.schools {
+  margin-bottom: 50px;
+}
+
+.schools span {
+  margin-left: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.schools img {
+  height: 20px;
+  width: 15px;
+  position: absolute;
+  left: 0;
+}
+
+.img_transform {
+  transform: rotate(180deg);
+}
+
+.schools p {
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  display: inline;
+}
+
+.results {
+  position: relative;
+}
+
+.result {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.result_title {
+  margin-bottom: 50px;
+}
+
+.result_title,
+h1 {
+  letter-spacing: 1rem;
+  color: rgb(221, 32, 5);
+  -webkit-text-stroke: 2px black;
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.change_students_input {
+  width: 40px;
+  vertical-align: top;
+  outline: none;
+  padding: 0 1px;
+  font-size: 12px;
+}
+
+.change_students_error {
+  color: #fff;
+  margin-top: 5px;
+  min-height: 18px;
+  font-size: 12px;
+}
+
+.form_data_delete_data {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.btn_mini {
+  cursor: pointer;
+  padding: 2px 2px 0 2px;
+  background-color: #000;
+  margin-right: 5px;
+}
+
+.btn_mini_img {
+  width: 18px;
+  height: 22px;
+}
+
+/*ввести данные*/
+.data_family {
+  margin-bottom: 0;
+}
+
+.form_data_buttons {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.data {
+  background-color: #000;
+  padding: 35px;
+  color: #fff;
+  width: 600px;
+  position: absolute;
+  z-index: 500;
+  border-radius: 25px;
+  top: 500px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.data_close {
+  position: relative;
+  margin: auto 0 auto auto;
+}
+
+.data_move {
+  display: block;
+  height: 26px;
+  width: 600px;
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: #f9870c;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: .8rem;
+  cursor: move;
+}
+
+.data_close_img {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -35px;
+  right: -18px;
+  cursor: pointer;
+}
+
+.data_minimize_img {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -35px;
+  right: 22px;
+  cursor: pointer;
+}
+
+.data_zadanie input {
+  margin: 10px 20px;
+}
+
+.form_data fieldset {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.change_students_block {
+  display: inline-block;
+  border-bottom: 1px solid #dd2005;
+}
+
+/*админ*/
+.admin,
+.admin_panel {
+  width: 40px;
+  transition: .4s;
+  height: 100vh;
+  background-color: #dd2005;
+  overflow-x: hidden;
+  position: fixed;
+  left: 0;
+  z-index: 500;
+}
+
+.admin:hover,
+.admin:focus {
+  width: 300px;
+  z-index: 500;
+}
+
+.admin_text {
+  font-size: 20px;
+  color: #fff;
+  writing-mode: vertical-lr;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  transform: rotate(180deg);
+}
+
+.admin_form {
+  position: absolute;
+  z-index: 50;
+  top: 10px;
+  left: 60px;
+}
+
+.admin_form input {
+  margin-bottom: 20px;
+  outline: 2px solid red;
+  outline-offset: -1px;
+}
+
+.admin_form_btn {
+  display: block;
+  width: 100px;
+  height: 28px;
+  padding: 5px;
+  letter-spacing: .1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.admin_panel {
+  background-color: #eb680b;
+}
+
+.admin_panel img {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0 0 10px;
+  cursor: pointer;
+}
+
+.get_cvs {
+  display: block;
+  letter-spacing: .1rem;
+  margin: 70px auto auto auto;
+}
+
+/* медиа */
+@media (max-width: 1200px) {
+  .result {
+    max-width: 1000px;
+    margin-right: 0;
+  }
+
+}
+
+@media (max-width: 1100px) {
+  .task_my {
+    margin-left: 50px;
+    max-width: 600px;
+  }
+
+  .task_total {
+    margin-right: 0;
+  }
+
+  .task_total_title {
+    top: -24%;
+  }
+}
+
+@media (max-width: 1060px) {
+  .admin {
+    top: 0;
+    width: 60px;
+    height: 118px;
+    overflow-y: scroll;
+  }
+
+  .admin::-webkit-scrollbar {
+    width: 5px;
+    background-color: #fee7ce;
+  }
+
+  .admin::-webkit-scrollbar-thumb {
+    background-color: red;
+  }
+
+  .result {
+    max-width: 1000px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .admin_panel {
+    height: 118px;
+    top: 0;
+  }
+  .admin:hover, .admin:focus{
+    height: 150px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .task_wrap {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .task_my {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .task_total {
+    margin-top: 100px;
+    margin-left: auto;
+  }
+
+  .task_total_title {
+    top: 0;
+    right: 100%;
+    font-size: 60px;
+  }
+
+  td {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .task_total_text,
+  .task_total_need {
+    font-size: 60px;
+  }
+
+  .task_total_text {
+    margin-top: 38%;
+  }
+}
+
+@media (max-width: 850px) {
+  .task_total_title {
+    right: 72%;
+  }
+}
+
+@media (max-width: 700px) {
+  .task_total_title {
+    right: 0;
+    top: -20%;
+    text-align: center;
+  }
+
+  .task_my {
+    font-size: 16px;
+    max-width: 400px
+  }
+
+  .task_total {
+    margin: 150px auto 0;
+  }
+
+  .task_my_img {
+    left: 50%;
+  }
+
+  .menu {
+    padding: 15px 0;
+  }
+
+  .menu_list {
+    width: 300px;
+    font-size: 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu_list li {
+    font-size: 18px;
+  }
+
+  .menu_list li~li {
+    margin-top: 10px;
+  }
+
+  .task_wrap {
+    margin-top: 30px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  .data,
+  .data_move {
+    width: 450px;
+  }
+
+  .form_data_buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form_data_buttons button+button {
+    margin-top: 30px;
+  }
+
+  .data_family_error {
+    width: 150px;
+    margin: 0 20px 0 0;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .result_title {
+    margin-bottom: 30px;
+  }
+
+  .schools td,
+  th {
+    font-size: 10px;
+    white-space: pre-wrap;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .test p {
+    font-size: 14px;
+    line-height: 1.5rem;
+  }
+
+  .form_test fieldset+fieldset span {
+    display: block;
+  }
+
+  .test_input_required {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .test_input_required select {
+    margin-left: 5px;
+  }
+
+  .form_test input {
+    margin-left: 5px;
+  }
+
+  .test_school_num {
+    margin-top: 20px;
+  }
+
+  .data_move,
+  .data {
+    max-width: 300px;
+  }
+
+  .data {
+    padding: 35px 5px 0 5px !important;
+    top: 600px;
+  }
+
+  .data_move {
+    right: -5px;
+    top: -40px;
+  }
+
+  .data_zadanie p {
+    display: flex;
+    flex-direction: column;
+  }
+
+  legend {
+    padding: 0 10px;
+  }
+
+  .add_student {
+    margin-bottom: 35px;
+  }
+
+  .data_input_required {
+    flex-direction: column;
+    align-items: flex-start;
+    height: min-content;
+  }
+
+  .data_zadanie p {
+    margin-top: 10px;
+    color: #eb680b;
+    font-size: 14px;
+  }
+
+  .data_school_num {
+    margin-left: 0;
+  }
+
+  .data_zadanie p span {
+    color: #fff;
+  }
+
+  .data_input_required select {
+    margin-top: 15px;
+  }
+
+  .data input {
+    margin-left: 0;
+  }
+
+  .data_minimize_img,
+  .data_close_img {
+    top: -70px;
+  }
+
+  .result_title {
+    font-size: 32px;
+  }
+}
+
+
+@media (max-width: 425px) {
+
+  .schools th, .schools td {
+    padding: 2px;
+  }
+  .result_title,
+  h1 {
+    font-size: 24px;
+  }
+
+  .form_test fieldset {
+    margin-top: 10px;
+  }
+
+  .schools p {
+    font-size: 16px;
+  }
+
+  .schools {
+    margin-bottom: 30px;
+  }
+  .get_cvs {
+    margin-top: 50px;
+  }
+
+  .task_total {
+    width: 250px;
+    height: 323px;
+    margin-top: 90px;
+  }
+
+  .task_total_title {
+    font-size: 43px;
+    right: -18px;
+  }
+
+  .task_total_need,
+  .task_total_text {
+    font-size: 40px;
+  }
+
+  .task_total_span {
+    font-size: 16px;
+  }
+
+  .task_my {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.2rem;
+  }
+}
